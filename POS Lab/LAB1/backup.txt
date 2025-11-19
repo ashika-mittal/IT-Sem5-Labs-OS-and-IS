@@ -1,0 +1,491 @@
+STUDENT@MIT-ICT-L11-06:~$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+STUDENT@MIT-ICT-L11-06:~$ ls -l
+total 32
+drwx------ 2 STUDENT STUDENT 4096 Jun 13 14:01 Desktop
+drwx------ 2 STUDENT STUDENT 4096 Jul 22 08:21 Documents
+drwx------ 2 STUDENT STUDENT 4096 Jun 13 14:03 Downloads
+drwx------ 2 STUDENT STUDENT 4096 Jun 28  2023 Music
+drwx------ 2 STUDENT STUDENT 4096 Oct  7  2024 Pictures
+drwx------ 2 STUDENT STUDENT 4096 Jun 28  2023 Public
+drwx------ 2 STUDENT STUDENT 4096 Jun 28  2023 Templates
+drwx------ 2 STUDENT STUDENT 4096 Jun 28  2023 Videos
+STUDENT@MIT-ICT-L11-06:~$ ls -a
+.              .designer  .gnupg         Pictures                   Templates
+..             Desktop    .lesshst       .pki                       .thunderbird
+.bash_history  Documents  .local         .profile                   Videos
+.bash_logout   .dotnet    .mozilla       Public                     .vscode
+.bashrc        Downloads  Music          .ssh
+.cache         .eclipse   .p2            .sudo_as_admin_successful
+.config        .gnome     .packettracer  .swt
+STUDENT@MIT-ICT-L11-06:~$ mkdir
+mkdir: missing operand
+Try 'mkdir --help' for more information.
+STUDENT@MIT-ICT-L11-06:~$ ls -la
+total 160
+drwx------ 25 STUDENT STUDENT  4096 Jun 13 14:03 .
+drwxr-xr-x 10 root    root     4096 Jun 28  2024 ..
+-rw-------  1 STUDENT STUDENT 39327 Dec  7  2024 .bash_history
+-rwx------  1 STUDENT STUDENT   220 Jun 26  2023 .bash_logout
+-rwx------  1 STUDENT STUDENT  3771 Jun 26  2023 .bashrc
+drwx------ 34 STUDENT STUDENT  4096 Oct 29  2024 .cache
+drwx------ 24 STUDENT STUDENT  4096 Dec  6  2024 .config
+drwxrwxr-x  4 STUDENT STUDENT  4096 Sep 30  2024 .designer
+drwx------  2 STUDENT STUDENT  4096 Jun 13 14:01 Desktop
+drwx------  2 STUDENT STUDENT  4096 Jul 22 08:21 Documents
+drwxrwxr-x  3 STUDENT STUDENT  4096 Sep  2  2023 .dotnet
+drwx------  2 STUDENT STUDENT  4096 Jun 13 14:03 Downloads
+drwxrwxr-x  6 STUDENT STUDENT  4096 Aug 12  2023 .eclipse
+drwx------  3 STUDENT STUDENT  4096 Oct  6  2023 .gnome
+drwx------  3 STUDENT STUDENT  4096 Jul 22 08:30 .gnupg
+-rw-------  1 STUDENT STUDENT    28 Jul 29  2024 .lesshst
+drwx------  3 STUDENT STUDENT  4096 Jun 28  2023 .local
+drwx------  5 STUDENT STUDENT  4096 Aug  1  2023 .mozilla
+drwx------  2 STUDENT STUDENT  4096 Jun 28  2023 Music
+drwxrwxr-x  6 STUDENT STUDENT  4096 Sep  9  2023 .p2
+-rw-rw-r--  1 STUDENT STUDENT    58 Dec 19  2023 .packettracer
+drwx------  2 STUDENT STUDENT  4096 Oct  7  2024 Pictures
+drwx------  3 STUDENT STUDENT  4096 Aug  8  2023 .pki
+-rwx------  1 STUDENT STUDENT   807 Jun 26  2023 .profile
+drwx------  2 STUDENT STUDENT  4096 Jun 28  2023 Public
+drwx------  2 STUDENT STUDENT  4096 Aug  2  2023 .ssh
+-rw-r--r--  1 STUDENT STUDENT     0 Aug  5  2023 .sudo_as_admin_successful
+drwxrwxr-x  2 STUDENT STUDENT  4096 Aug 12  2023 .swt
+drwx------  2 STUDENT STUDENT  4096 Jun 28  2023 Templates
+drwx------  6 STUDENT STUDENT  4096 Aug 12  2023 .thunderbird
+drwx------  2 STUDENT STUDENT  4096 Jun 28  2023 Videos
+drwxrwxr-x  4 STUDENT STUDENT  4096 Sep  2  2023 .vscode
+STUDENT@MIT-ICT-L11-06:~$ mkdir 230911332
+STUDENT@MIT-ICT-L11-06:~$ ls
+230911332  Documents  Music     Public     Videos
+Desktop    Downloads  Pictures  Templates
+STUDENT@MIT-ICT-L11-06:~$ cd 230911332
+STUDENT@MIT-ICT-L11-06:~/230911332$ mkdir LAB1
+STUDENT@MIT-ICT-L11-06:~/230911332$ cd LAB1
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ pwd
+/home/STUDENT/230911332/LAB1
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ touch file1.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ touch file2.txt hello.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ ls
+file1.txt  file2.txt  hello.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat f1.txt
+cat: f1.txt: No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat file1.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ ls
+file1.txt  file2.txt  hello.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat>f1.txt
+Hello World
+This is a demo!!
+^C
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat f1.txt
+Hello World
+This is a demo!!
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat> f1.txt
+This is demo 2
+^C
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat f1.txt
+This is demo 2
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat>>f1.txt
+This is demo 3,hopefully doesnt overwrite
+^C
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat f1.txt
+This is demo 2
+This is demo 3,hopefully doesnt overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ nano f1
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ nano f1.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat f1.txt
+This is demo 2, Demo 1 was overwritten(This line is edited using nano)
+This is demo 3,hopefully doesnt overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ man ls
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ ls *.txt
+f1.txt  file1.txt  file2.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ ls [a-o].txt
+ls: cannot access '[a-o].txt': No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ ls [a-o]1.txt
+f1.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ head f1.txt
+This is demo 2, Demo 1 was overwritten(This line is edited using nano)
+This is demo 3,hopefully doesnt overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ tail f1.txt
+This is demo 2, Demo 1 was overwritten(This line is edited using nano)
+This is demo 3,hopefully doesnt overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp f1.txt/Documents
+cp: missing destination file operand after 'f1.txt/Documents'
+Try 'cp --help' for more information.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp f1.txt^Cocuments
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp f1.txt/"STUDENT@MIT-ICT-L11-06/Documents"
+cp: missing destination file operand after 'f1.txt/STUDENT@MIT-ICT-L11-06/Documents'
+Try 'cp --help' for more information.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ MAN CP
+MAN: command not found
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ man cp
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp f1.txt Documents
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp f1.txt file1/txt
+cp: cannot create regular file 'file1/txt': No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp f1.txt file1.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat file1.txt
+This is demo 2, Demo 1 was overwritten(This line is edited using nano)
+This is demo 3,hopefully doesnt overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp f1.txt "STUDENT@MIT-ICT-L11-06/Documents"
+cp: cannot create regular file 'STUDENT@MIT-ICT-L11-06/Documents': No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp --help
+Usage: cp [OPTION]... [-T] SOURCE DEST
+  or:  cp [OPTION]... SOURCE... DIRECTORY
+  or:  cp [OPTION]... -t DIRECTORY SOURCE...
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --archive                same as -dR --preserve=all
+      --attributes-only        don't copy the file data, just the attributes
+      --backup[=CONTROL]       make a backup of each existing destination file
+  -b                           like --backup but does not accept an argument
+      --copy-contents          copy contents of special files when recursive
+  -d                           same as --no-dereference --preserve=links
+  -f, --force                  if an existing destination file cannot be
+                                 opened, remove it and try again (this option
+                                 is ignored when the -n option is also used)
+  -i, --interactive            prompt before overwrite (overrides a previous -n
+                                  option)
+  -H                           follow command-line symbolic links in SOURCE
+  -l, --link                   hard link files instead of copying
+  -L, --dereference            always follow symbolic links in SOURCE
+  -n, --no-clobber             do not overwrite an existing file (overrides
+                                 a previous -i option)
+  -P, --no-dereference         never follow symbolic links in SOURCE
+  -p                           same as --preserve=mode,ownership,timestamps
+      --preserve[=ATTR_LIST]   preserve the specified attributes (default:
+                                 mode,ownership,timestamps), if possible
+                                 additional attributes: context, links, xattr,
+                                 all
+      --no-preserve=ATTR_LIST  don't preserve the specified attributes
+      --parents                use full source file name under DIRECTORY
+  -R, -r, --recursive          copy directories recursively
+      --reflink[=WHEN]         control clone/CoW copies. See below
+      --remove-destination     remove each existing destination file before
+                                 attempting to open it (contrast with --force)
+      --sparse=WHEN            control creation of sparse files. See below
+      --strip-trailing-slashes  remove any trailing slashes from each SOURCE
+                                 argument
+  -s, --symbolic-link          make symbolic links instead of copying
+  -S, --suffix=SUFFIX          override the usual backup suffix
+  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 copy only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+  -v, --verbose                explain what is being done
+  -x, --one-file-system        stay on this file system
+  -Z                           set SELinux security context of destination
+                                 file to default type
+      --context[=CTX]          like -Z, or if CTX is specified then set the
+                                 SELinux or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, sparse SOURCE files are detected by a crude heuristic and the
+corresponding DEST file is made sparse as well.  That is the behavior
+selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST
+file whenever the SOURCE file contains a long enough sequence of zero bytes.
+Use --sparse=never to inhibit creation of sparse files.
+
+When --reflink[=always] is specified, perform a lightweight copy, where the
+data blocks are copied only when modified.  If this is not possible the copy
+fails, or if --reflink=auto is specified, fall back to a standard copy.
+Use --reflink=never to ensure a standard copy is performed.
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+
+As a special case, cp makes a backup of SOURCE when the force and backup
+options are given and SOURCE and DEST are the same name for an existing,
+regular file.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/cp>
+or available locally via: info '(coreutils) cp invocation'
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp -i f1.txt file2.txt
+cp: overwrite 'file2.txt'? n
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat file2.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp -i f1.txt file2.txt
+cp: overwrite 'file2.txt'? y
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat file2.txt
+This is demo 2, Demo 1 was overwritten(This line is edited using nano)
+This is demo 3,hopefully doesnt overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp f1.txt file2.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat file2.txt
+This is demo 2, Demo 1 was overwritten(This line is edited using nano)
+This is demo 3,hopefully doesnt overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp -n f1.txt file2.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat file2.txt
+This is demo 2, Demo 1 was overwritten(This line is edited using nano)
+This is demo 3,hopefully doesnt overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp -f f1.txt file3.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat file3.txt
+This is demo 2, Demo 1 was overwritten(This line is edited using nano)
+This is demo 3,hopefully doesnt overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cp -n f1.txt file3.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat file3.txt
+This is demo 2, Demo 1 was overwritten(This line is edited using nano)
+This is demo 3,hopefully doesnt overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ head --help
+Usage: head [OPTION]... [FILE]...
+Print the first 10 lines of each FILE to standard output.
+With more than one FILE, precede each with a header giving the file name.
+
+With no FILE, or when FILE is -, read standard input.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -c, --bytes=[-]NUM       print the first NUM bytes of each file;
+                             with the leading '-', print all but the last
+                             NUM bytes of each file
+  -n, --lines=[-]NUM       print the first NUM lines instead of the first 10;
+                             with the leading '-', print all but the last
+                             NUM lines of each file
+  -q, --quiet, --silent    never print headers giving file names
+  -v, --verbose            always print headers giving file names
+  -z, --zero-terminated    line delimiter is NUL, not newline
+      --help     display this help and exit
+      --version  output version information and exit
+
+NUM may have a multiplier suffix:
+b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
+GB 1000*1000*1000, G 1024*1024*1024, and so on for T, P, E, Z, Y.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/head>
+or available locally via: info '(coreutils) head invocation'
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ head -n [1]NUM f1.txt
+head: invalid number of lines: ‘[1]NUM’
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ head -n 1NUM f1.txt
+head: invalid number of lines: ‘1NUM’
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ head -1 f1.txt
+This is demo 2, Demo 1 was overwritten(This line is edited using nano)
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ tail -1 f1.txt
+This is demo 3,hopefully doesnt overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ tail -c1 f1.txt
+
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ tail -c10 f1.txt
+overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ head -c10 f1.txt
+This is deSTUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ 
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ 
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ 
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ mv --help
+Usage: mv [OPTION]... [-T] SOURCE DEST
+  or:  mv [OPTION]... SOURCE... DIRECTORY
+  or:  mv [OPTION]... -t DIRECTORY SOURCE...
+Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY.
+
+Mandatory arguments to long options are mandatory for short options too.
+      --backup[=CONTROL]       make a backup of each existing destination file
+  -b                           like --backup but does not accept an argument
+  -f, --force                  do not prompt before overwriting
+  -i, --interactive            prompt before overwrite
+  -n, --no-clobber             do not overwrite an existing file
+If you specify more than one of -i, -f, -n, only the final one takes effect.
+      --strip-trailing-slashes  remove any trailing slashes from each SOURCE
+                                 argument
+  -S, --suffix=SUFFIX          override the usual backup suffix
+  -t, --target-directory=DIRECTORY  move all SOURCE arguments into DIRECTORY
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 move only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+  -v, --verbose                explain what is being done
+  -Z, --context                set SELinux security context of destination
+                                 file to default type
+      --help     display this help and exit
+      --version  output version information and exit
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/mv>
+or available locally via: info '(coreutils) mv invocation'
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ mv -n f1.txt f2.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat f2.txt
+This is demo 2, Demo 1 was overwritten(This line is edited using nano)
+This is demo 3,hopefully doesnt overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ mv -f f1.txt f3.txt
+mv: cannot stat 'f1.txt': No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ mv -f f2.txt f1.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat f2.txt
+cat: f2.txt: No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ cat f1.txt
+This is demo 2, Demo 1 was overwritten(This line is edited using nano)
+This is demo 3,hopefully doesnt overwrite
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ rm --help
+Usage: rm [OPTION]... [FILE]...
+Remove (unlink) the FILE(s).
+
+  -f, --force           ignore nonexistent files and arguments, never prompt
+  -i                    prompt before every removal
+  -I                    prompt once before removing more than three files, or
+                          when removing recursively; less intrusive than -i,
+                          while still giving protection against most mistakes
+      --interactive[=WHEN]  prompt according to WHEN: never, once (-I), or
+                          always (-i); without WHEN, prompt always
+      --one-file-system  when removing a hierarchy recursively, skip any
+                          directory that is on a file system different from
+                          that of the corresponding command line argument
+      --no-preserve-root  do not treat '/' specially
+      --preserve-root[=all]  do not remove '/' (default);
+                              with 'all', reject any command line argument
+                              on a separate device from its parent
+  -r, -R, --recursive   remove directories and their contents recursively
+  -d, --dir             remove empty directories
+  -v, --verbose         explain what is being done
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, rm does not remove directories.  Use the --recursive (-r or -R)
+option to remove each listed directory, too, along with all of its contents.
+
+To remove a file whose name starts with a '-', for example '-foo',
+use one of these commands:
+  rm -- -foo
+
+  rm ./-foo
+
+Note that if you use rm to remove a file, it might be possible to recover
+some of its contents, given sufficient expertise and/or time.  For greater
+assurance that the contents are truly unrecoverable, consider using shred.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/rm>
+or available locally via: info '(coreutils) rm invocation'
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ rm -i file3.txt
+rm: remove regular file 'file3.txt'? y
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ rm -i file3.txt
+rm: cannot remove 'file3.txt': No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ rm -f file3.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ rm -r file3.txt
+rm: cannot remove 'file3.txt': No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ rm -r file2.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ rm -r file2.txt
+rm: cannot remove 'file2.txt': No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ rmdir --help
+Usage: rmdir [OPTION]... DIRECTORY...
+Remove the DIRECTORY(ies), if they are empty.
+
+      --ignore-fail-on-non-empty
+                  ignore each failure that is solely because a directory
+                    is non-empty
+  -p, --parents   remove DIRECTORY and its ancestors; e.g., 'rmdir -p a/b/c' is
+                    similar to 'rmdir a/b/c a/b a'
+  -v, --verbose   output a diagnostic for every directory processed
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/rmdir>
+or available locally via: info '(coreutils) rmdir invocation'
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find --help
+Usage: find [-H] [-L] [-P] [-Olevel] [-D debugopts] [path...] [expression]
+
+default path is the current directory; default expression is -print
+expression may consist of: operators, options, tests, and actions:
+operators (decreasing precedence; -and is implicit where no others are given):
+      ( EXPR )   ! EXPR   -not EXPR   EXPR1 -a EXPR2   EXPR1 -and EXPR2
+      EXPR1 -o EXPR2   EXPR1 -or EXPR2   EXPR1 , EXPR2
+positional options (always true): -daystart -follow -regextype
+
+normal options (always true, specified before other expressions):
+      -depth --help -maxdepth LEVELS -mindepth LEVELS -mount -noleaf
+      --version -xdev -ignore_readdir_race -noignore_readdir_race
+tests (N can be +N or -N or N): -amin N -anewer FILE -atime N -cmin N
+      -cnewer FILE -ctime N -empty -false -fstype TYPE -gid N -group NAME
+      -ilname PATTERN -iname PATTERN -inum N -iwholename PATTERN -iregex PATTERN
+      -links N -lname PATTERN -mmin N -mtime N -name PATTERN -newer FILE
+      -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN
+      -readable -writable -executable
+      -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N
+      -used N -user NAME -xtype [bcdpfls]      -context CONTEXT
+
+actions: -delete -print0 -printf FORMAT -fprintf FILE FORMAT -print 
+      -fprint0 FILE -fprint FILE -ls -fls FILE -prune -quit
+      -exec COMMAND ; -exec COMMAND {} + -ok COMMAND ;
+      -execdir COMMAND ; -execdir COMMAND {} + -okdir COMMAND ;
+
+Valid arguments for -D:
+exec, opt, rates, search, stat, time, tree, all, help
+Use '-D help' for a description of the options, or see find(1)
+
+Please see also the documentation at http://www.gnu.org/software/findutils/.
+You can report (and track progress on fixing) bugs in the "find"
+program via the GNU findutils bug-reporting page at
+https://savannah.gnu.org/bugs/?group=findutils or, if
+you have no web access, by sending email to <bug-findutils@gnu.org>.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find -name *.txt
+find: paths must precede expression: `file1.txt'
+find: possible unquoted pattern after predicate `-name'?
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find *.txt
+f1.txt
+file1.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ touch hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ ls
+Documents  f1.txt  file1.txt  hello.sh  hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find hello
+find: ‘hello’: No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find -type hello
+find: Unknown argument to -type: h
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find -type txt
+find: Unknown argument to -type: t
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ man find
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find -type c
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ man find
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find -type b
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find -type b
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find -type d
+.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find -type f
+./Documents
+./f1.txt
+./hello.txt
+./file1.txt
+./hello.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find *.txt
+f1.txt
+file1.txt
+hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ bc <<< 5+5
+10
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find ????*.txt
+file1.txt
+hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ *[0-9]*
+f1.txt: command not found
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find *[0-9]*
+f1.txt
+file1.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ [!aeiou]*
+Documents: command not found
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find [!aeiou]*
+Documents
+f1.txt
+file1.txt
+hello.sh
+hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ touch abc.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ find [!aeiou]*
+Documents
+f1.txt
+file1.txt
+hello.sh
+hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB1$ ls
+abc.txt  Documents  f1.txt  file1.txt  hello.sh  hello.txt
+

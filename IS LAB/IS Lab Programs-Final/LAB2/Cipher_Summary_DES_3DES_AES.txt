@@ -1,0 +1,33 @@
+Summary of DES, 3DES, and AES Algorithms
+
+1. DES (Data Encryption Standard)
+   - Symmetric block cipher (64-bit block size).
+   - Key size: 56 bits (effective).
+   - Uses 16 rounds of Feistel structure.
+   - Formula (simplified Feistel round):
+       L_(i) = R_(i-1)
+       R_(i) = L_(i-1) XOR F(R_(i-1), K_i)
+   - Vulnerable to brute-force due to small key size.
+
+2. 3DES (Triple DES)
+   - Improvement over DES by applying DES three times.
+   - Key size: 112 or 168 bits (depending on 2-key or 3-key version).
+   - Process: Encrypt → Decrypt → Encrypt (EDE mode).
+   - Formula:
+       C = E_K3(D_K2(E_K1(P)))
+   - More secure than DES but slower.
+
+3. AES (Advanced Encryption Standard)
+   - Symmetric block cipher (128-bit block size).
+   - Key sizes: 128, 192, or 256 bits.
+   - Uses Substitution-Permutation Network (SPN) structure.
+   - Number of rounds:
+       - 10 rounds (128-bit key)
+       - 12 rounds (192-bit key)
+       - 14 rounds (256-bit key)
+   - Formula (round structure simplified):
+       State = SubBytes(State)
+       State = ShiftRows(State)
+       State = MixColumns(State)
+       State = AddRoundKey(State, RoundKey)
+   - Much stronger and faster than DES/3DES.

@@ -1,0 +1,64 @@
+STUDENT@MIT-ICT-L11-06:~/230911332$ cd LAB5
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB5$ gcc Q1.c
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB5$ ./a.out
+This is the Parent Process
+Parent PID: 5413
+Parent's Parent PID (PPID): 3612
+This is the Child Process
+Child PID: 5414
+Child's Parent PID (PPID): 1708
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB5$ gcc Q1.c -o Q1
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB5$ ./Q1
+This is the Parent Process
+Parent PID: 5442
+Parent's Parent PID (PPID): 3612
+This is the Child Process
+Child PID: 5443
+Child's Parent PID (PPID): 1708
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB5$ gcc Q2.c -o Q2
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB5$ ./Q2
+Usage: ./Q2 <strings>
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB5$ ./Q2 mango apple banana orange
+Child: Sorted Strings:
+apple
+banana
+mango
+orange
+Parent: Unsorted Strings:
+mango
+apple
+banana
+orange
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB5$ gcc Q3.c -o Q3
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB5$ ./Q3 mango apple banana orange
+Enter number of strings: 2
+Enter 2 strings:
+apple 
+orange
+Child 1 (Bubble Sort):
+apple
+orange
+Child 2 (Selection Sort):
+apple
+orange
+Parent: At least one child has finished sorting.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB5$ ./Q3
+Enter number of strings: 4
+Enter 4 strings:
+mango
+apple
+orage
+banana
+Child 1 (Bubble Sort):
+apple
+banana
+mango
+orage
+Child 2 (Selection Sort):
+apple
+banana
+mango
+orage
+Parent: At least one child has finished sorting.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB5$ 
+

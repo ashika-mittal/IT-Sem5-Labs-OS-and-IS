@@ -1,0 +1,678 @@
+STUDENT@MIT-ICT-L11-06:~$ cd 230911332
+STUDENT@MIT-ICT-L11-06:~/230911332$ mkdir LAB2
+STUDENT@MIT-ICT-L11-06:~/230911332$ cd LAB2
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep --help
+Usage: grep [OPTION]... PATTERNS [FILE]...
+Search for PATTERNS in each FILE.
+Example: grep -i 'hello world' menu.h main.c
+PATTERNS can contain multiple patterns separated by newlines.
+
+Pattern selection and interpretation:
+  -E, --extended-regexp     PATTERNS are extended regular expressions
+  -F, --fixed-strings       PATTERNS are strings
+  -G, --basic-regexp        PATTERNS are basic regular expressions
+  -P, --perl-regexp         PATTERNS are Perl regular expressions
+  -e, --regexp=PATTERNS     use PATTERNS for matching
+  -f, --file=FILE           take PATTERNS from FILE
+  -i, --ignore-case         ignore case distinctions in patterns and data
+      --no-ignore-case      do not ignore case distinctions (default)
+  -w, --word-regexp         match only whole words
+  -x, --line-regexp         match only whole lines
+  -z, --null-data           a data line ends in 0 byte, not newline
+
+Miscellaneous:
+  -s, --no-messages         suppress error messages
+  -v, --invert-match        select non-matching lines
+  -V, --version             display version information and exit
+      --help                display this help text and exit
+
+Output control:
+  -m, --max-count=NUM       stop after NUM selected lines
+  -b, --byte-offset         print the byte offset with output lines
+  -n, --line-number         print line number with output lines
+      --line-buffered       flush output on every line
+  -H, --with-filename       print file name with output lines
+  -h, --no-filename         suppress the file name prefix on output
+      --label=LABEL         use LABEL as the standard input file name prefix
+  -o, --only-matching       show only nonempty parts of lines that match
+  -q, --quiet, --silent     suppress all normal output
+      --binary-files=TYPE   assume that binary files are TYPE;
+                            TYPE is 'binary', 'text', or 'without-match'
+  -a, --text                equivalent to --binary-files=text
+  -I                        equivalent to --binary-files=without-match
+  -d, --directories=ACTION  how to handle directories;
+                            ACTION is 'read', 'recurse', or 'skip'
+  -D, --devices=ACTION      how to handle devices, FIFOs and sockets;
+                            ACTION is 'read' or 'skip'
+  -r, --recursive           like --directories=recurse
+  -R, --dereference-recursive  likewise, but follow all symlinks
+      --include=GLOB        search only files that match GLOB (a file pattern)
+      --exclude=GLOB        skip files that match GLOB
+      --exclude-from=FILE   skip files that match any file pattern from FILE
+      --exclude-dir=GLOB    skip directories that match GLOB
+  -L, --files-without-match  print only names of FILEs with no selected lines
+  -l, --files-with-matches  print only names of FILEs with selected lines
+  -c, --count               print only a count of selected lines per FILE
+  -T, --initial-tab         make tabs line up (if needed)
+  -Z, --null                print 0 byte after FILE name
+
+Context control:
+  -B, --before-context=NUM  print NUM lines of leading context
+  -A, --after-context=NUM   print NUM lines of trailing context
+  -C, --context=NUM         print NUM lines of output context
+  -NUM                      same as --context=NUM
+      --color[=WHEN],
+      --colour[=WHEN]       use markers to highlight the matching strings;
+                            WHEN is 'always', 'never', or 'auto'
+  -U, --binary              do not strip CR characters at EOL (MSDOS/Windows)
+
+When FILE is '-', read standard input.  With no FILE, read '.' if
+recursive, '-' otherwise.  With fewer than two FILEs, assume -h.
+Exit status is 0 if any line (or file if -L) is selected, 1 otherwise;
+if any error occurs and -q is not given, the exit status is 2.
+
+Report bugs to: bug-grep@gnu.org
+GNU grep home page: <http://www.gnu.org/software/grep/>
+General help using GNU software: <https://www.gnu.org/gethelp/>
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat > hello.txt
+Hello world
+This is the sample text file for LAB 2
+Let's hope to complete!!!
+^C
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat hello.txt
+Hello world
+This is the sample text file for LAB 2
+Let's hope to complete!!!
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -i h hello.txt
+Hello world
+This is the sample text file for LAB 2
+Let's hope to complete!!!
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat > fruitlist.txt
+apple
+apples
+pineapple
+woodapple
+banana
+pear
+peach
+orange
+^C
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep apple fruitlist.txt
+apple
+apples
+pineapple
+woodapple
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -x apple fruitlist.txt
+apple
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -x Apple fruitlist.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -xi Apple fruitlist.txt
+apple
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -i Apple fruitlist.txt
+apple
+apples
+pineapple
+woodapple
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ ￼
+￼: command not found
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -i A fruitlist.txt
+apple
+apples
+pineapple
+woodapple
+banana
+pear
+peach
+orange
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -i ^A fruitlist.txt
+apple
+apples
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -v ^apple fruitlist.txt
+pineapple
+woodapple
+banana
+pear
+peach
+orange
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -v apple fruitlist.txt
+banana
+pear
+peach
+orange
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -vm apple fruitlist.txt 2
+grep: invalid max count
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -vm apple fruitlist.txt 3
+grep: invalid max count
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -vm 3 apple fruitlist.txt
+banana
+pear
+peach
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -vm 2 apple fruitlist.txt
+banana
+pear
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -m 2 apple fruitlist.txt
+apple
+apples
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep -i a *
+fruitlist.txt:apple
+fruitlist.txt:apples
+fruitlist.txt:pineapple
+fruitlist.txt:woodapple
+fruitlist.txt:banana
+fruitlist.txt:pear
+fruitlist.txt:peach
+fruitlist.txt:orange
+hello.txt:This is the sample text file for LAB 2
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ sort fruitlist.txt hello.txt
+apple
+apples
+banana
+Hello world
+Let's hope to complete!!!
+orange
+peach
+pear
+pineapple
+This is the sample text file for LAB 2
+woodapple
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ sort fruitlist.txt
+apple
+apples
+banana
+orange
+peach
+pear
+pineapple
+woodapple
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ sort -o fruitlist.txt sortedFruitList.txt
+sort: cannot read: sortedFruitList.txt: No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ touch sortedFruitList.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ sort -o fruitlist.txt sortedFruitList.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat sortedFruitList.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ sort --help
+Usage: sort [OPTION]... [FILE]...
+  or:  sort [OPTION]... --files0-from=F
+Write sorted concatenation of all FILE(s) to standard output.
+
+With no FILE, or when FILE is -, read standard input.
+
+Mandatory arguments to long options are mandatory for short options too.
+Ordering options:
+
+  -b, --ignore-leading-blanks  ignore leading blanks
+  -d, --dictionary-order      consider only blanks and alphanumeric characters
+  -f, --ignore-case           fold lower case to upper case characters
+  -g, --general-numeric-sort  compare according to general numerical value
+  -i, --ignore-nonprinting    consider only printable characters
+  -M, --month-sort            compare (unknown) < 'JAN' < ... < 'DEC'
+  -h, --human-numeric-sort    compare human readable numbers (e.g., 2K 1G)
+  -n, --numeric-sort          compare according to string numerical value
+  -R, --random-sort           shuffle, but group identical keys.  See shuf(1)
+      --random-source=FILE    get random bytes from FILE
+  -r, --reverse               reverse the result of comparisons
+      --sort=WORD             sort according to WORD:
+                                general-numeric -g, human-numeric -h, month -M,
+                                numeric -n, random -R, version -V
+  -V, --version-sort          natural sort of (version) numbers within text
+
+Other options:
+
+      --batch-size=NMERGE   merge at most NMERGE inputs at once;
+                            for more use temp files
+  -c, --check, --check=diagnose-first  check for sorted input; do not sort
+  -C, --check=quiet, --check=silent  like -c, but do not report first bad line
+      --compress-program=PROG  compress temporaries with PROG;
+                              decompress them with PROG -d
+      --debug               annotate the part of the line used to sort,
+                              and warn about questionable usage to stderr
+      --files0-from=F       read input from the files specified by
+                            NUL-terminated names in file F;
+                            If F is - then read names from standard input
+  -k, --key=KEYDEF          sort via a key; KEYDEF gives location and type
+  -m, --merge               merge already sorted files; do not sort
+  -o, --output=FILE         write result to FILE instead of standard output
+  -s, --stable              stabilize sort by disabling last-resort comparison
+  -S, --buffer-size=SIZE    use SIZE for main memory buffer
+  -t, --field-separator=SEP  use SEP instead of non-blank to blank transition
+  -T, --temporary-directory=DIR  use DIR for temporaries, not $TMPDIR or /tmp;
+                              multiple options specify multiple directories
+      --parallel=N          change the number of sorts run concurrently to N
+  -u, --unique              with -c, check for strict ordering;
+                              without -c, output only the first of an equal run
+  -z, --zero-terminated     line delimiter is NUL, not newline
+      --help     display this help and exit
+      --version  output version information and exit
+
+KEYDEF is F[.C][OPTS][,F[.C][OPTS]] for start and stop position, where F is a
+field number and C a character position in the field; both are origin 1, and
+the stop position defaults to the line's end.  If neither -t nor -b is in
+effect, characters in a field are counted from the beginning of the preceding
+whitespace.  OPTS is one or more single-letter ordering options [bdfgiMhnRrV],
+which override global ordering options for that key.  If no key is given, use
+the entire line as the key.  Use --debug to diagnose incorrect key usage.
+
+SIZE may be followed by the following multiplicative suffixes:
+% 1% of memory, b 1, K 1024 (default), and so on for M, G, T, P, E, Z, Y.
+
+*** WARNING ***
+The locale specified by the environment affects sort order.
+Set LC_ALL=C to get the traditional sort order that uses
+native byte values.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/sort>
+or available locally via: info '(coreutils) sort invocation'
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ sort -o fruitlist.txt sortedFruitList.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat > fruitlist.txt
+apple
+apples
+pineapple
+woodapple
+banana
+pear
+peach 
+orange
+^C
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ sort -o fruitlist.txt sortedFruitList.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat > fruitlist.txt
+apple
+apples
+pineapple
+woodapple
+banana
+pear
+peach 
+orange
+^C
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ sort -o sortedFruitList.txt fruitlist.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ sort -r fruitlist.txt
+woodapple
+pineapple
+pear
+peach 
+orange
+banana
+apples
+apple
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat > numbers.txt
+10
+29
+2   
+8
+18
+20
+45  
+^C
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ sort numbers.txt
+10
+18
+2
+20
+29
+45
+8
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ sort -n numbers.txt
+2
+8
+10
+18
+20
+29
+45
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ wc hello.txt
+ 3 15 77 hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ wc -l hello.txt
+3 hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ wc -w hello.txt
+15 hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ wc --help
+Usage: wc [OPTION]... [FILE]...
+  or:  wc [OPTION]... --files0-from=F
+Print newline, word, and byte counts for each FILE, and a total line if
+more than one FILE is specified.  A word is a non-zero-length sequence of
+characters delimited by white space.
+
+With no FILE, or when FILE is -, read standard input.
+
+The options below may be used to select which counts are printed, always in
+the following order: newline, word, character, byte, maximum line length.
+  -c, --bytes            print the byte counts
+  -m, --chars            print the character counts
+  -l, --lines            print the newline counts
+      --files0-from=F    read input from the files specified by
+                           NUL-terminated names in file F;
+                           If F is - then read names from standard input
+  -L, --max-line-length  print the maximum display width
+  -w, --words            print the word counts
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/wc>
+or available locally via: info '(coreutils) wc invocation'
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ wc -m hello.txt
+77 hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ wc -c hello.txt
+77 hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ wc -L hello.txt
+38 hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -c 1-3 numbers.txt
+10
+29
+2
+8
+18
+20
+45
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -c 3 numbers.txt
+
+
+
+
+
+
+
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -c 1 numbers.txt
+1
+2
+2
+8
+1
+2
+4
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -c 2 numbers.txt
+0
+9
+
+
+8
+0
+5
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -c 2 fruitlist.txt
+p
+p
+i
+o
+a
+e
+e
+r
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -c 1-7 fruitlist.txt
+apple
+apples
+pineapp
+woodapp
+banana
+pear
+peach 
+orange
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -c 1-5 fruitlist.txt
+apple
+apple
+pinea
+wooda
+banan
+pear
+peach
+orang
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -c 5,6,7 fruitlist.txt
+e
+es
+app
+app
+na
+
+h 
+ge
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -c3- fruitlist.txt
+ple
+ples
+neapple
+odapple
+nana
+ar
+ach 
+ange
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -f 1,4,7 fruitlist.txt
+apple
+apples
+pineapple
+woodapple
+banana
+pear
+peach 
+orange
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -f 1 fruitlist.txt
+apple
+apples
+pineapple
+woodapple
+banana
+pear
+peach 
+orange
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -f 4 fruitlist.txt
+apple
+apples
+pineapple
+woodapple
+banana
+pear
+peach 
+orange
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut --help
+Usage: cut OPTION... [FILE]...
+Print selected parts of lines from each FILE to standard output.
+
+With no FILE, or when FILE is -, read standard input.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -b, --bytes=LIST        select only these bytes
+  -c, --characters=LIST   select only these characters
+  -d, --delimiter=DELIM   use DELIM instead of TAB for field delimiter
+  -f, --fields=LIST       select only these fields;  also print any line
+                            that contains no delimiter character, unless
+                            the -s option is specified
+  -n                      (ignored)
+      --complement        complement the set of selected bytes, characters
+                            or fields
+  -s, --only-delimited    do not print lines not containing delimiters
+      --output-delimiter=STRING  use STRING as the output delimiter
+                            the default is to use the input delimiter
+  -z, --zero-terminated    line delimiter is NUL, not newline
+      --help     display this help and exit
+      --version  output version information and exit
+
+Use one, and only one of -b, -c or -f.  Each LIST is made up of one
+range, or many ranges separated by commas.  Selected input is written
+in the same order that it is read, and is written exactly once.
+Each range is one of:
+
+  N     N'th byte, character or field, counted from 1
+  N-    from N'th byte, character or field, to end of line
+  N-M   from N'th to M'th (included) byte, character or field
+  -M    from first to M'th (included) byte, character or field
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/cut>
+or available locally via: info '(coreutils) cut invocation'
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -f 4 hello.txt
+Hello world
+This is the sample text file for LAB 2
+Let's hope to complete!!!
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -d'e' f1,2 hello.txt
+cut: you must specify a list of bytes, characters, or fields
+Try 'cut --help' for more information.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cut -d'e' -f1,2 hello.txt
+Hello world
+This is the sampl
+Let's hop
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ ^C
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat -A hello.txt | cut -d'e' -f1,2
+Hello world$
+This is the sampl
+Let's hop
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat -A hello.txt | cut -d'e' -f1
+H
+This is th
+L
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat -A hello.txt | cut -d'e' -f1,3
+H
+This is the t
+Le to compl
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat -A hello.txt | cut -d'e' -f1
+H
+This is th
+L
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat -A hello.txt | cut -d'e' -f 1
+H
+This is th
+L
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat -A hello.txt | cut -d'e' -f 1,3
+H
+This is the t
+Le to compl
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat -A hello.txt | cut -d'e' -f 3
+
+ t
+ to compl
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat -A hello.txt | cut -d'e'
+cut: you must specify a list of bytes, characters, or fields
+Try 'cut --help' for more information.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat -A hello.txt | cut -d'e' -f 2
+llo world$
+ sampl
+t's hop
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ tr -d '\r' hello.txt
+tr: extra operand ‘hello.txt’
+Only one string may be given when deleting without squeezing repeats.
+Try 'tr --help' for more information.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ tr -d '\r' < hello.txt
+Hello world
+This is the sample text file for LAB 2
+Let's hope to complete!!!
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ ps
+    PID TTY          TIME CMD
+   2337 pts/0    00:00:00 bash
+   5707 pts/0    00:00:00 ps
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ ps --help
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ ps
+\    PID TTY          TIME CMD
+   2337 pts/0    00:00:00 bash
+   5710 pts/0    00:00:00 ps
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ kill 5710
+bash: kill: (5710) - No such process
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ ps
+    PID TTY          TIME CMD
+   2337 pts/0    00:00:00 bash
+   5713 pts/0    00:00:00 ps
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ kill 5713
+bash: kill: (5713) - No such process
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ ps
+    PID TTY          TIME CMD
+   2337 pts/0    00:00:00 bash
+   5715 pts/0    00:00:00 ps
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ chmod
+chmod: missing operand
+Try 'chmod --help' for more information.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ chmod --help
+Usage: chmod [OPTION]... MODE[,MODE]... FILE...
+  or:  chmod [OPTION]... OCTAL-MODE FILE...
+  or:  chmod [OPTION]... --reference=RFILE FILE...
+Change the mode of each FILE to MODE.
+With --reference, change the mode of each FILE to that of RFILE.
+
+  -c, --changes          like verbose but report only when a change is made
+  -f, --silent, --quiet  suppress most error messages
+  -v, --verbose          output a diagnostic for every file processed
+      --no-preserve-root  do not treat '/' specially (the default)
+      --preserve-root    fail to operate recursively on '/'
+      --reference=RFILE  use RFILE's mode instead of MODE values
+  -R, --recursive        change files and directories recursively
+      --help     display this help and exit
+      --version  output version information and exit
+
+Each MODE is of the form '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/chmod>
+or available locally via: info '(coreutils) chmod invocation'
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ chmod u-w numebrs.txt
+chmod: cannot access 'numebrs.txt': No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ chmod u-w numbers.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat numbers.txt
+10
+29
+2
+8
+18
+20
+45
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat >> numbers.txt
+bash: numbers.txt: Permission denied
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ echo
+
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ echo --help
+--help
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ vi
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ vi hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ vi hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ vi hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep '\.$' hello.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ hello.txt
+hello.txt: command not found
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat hello.txt
+Hello world
+This is the sample text file for LAB 2
+Let's hope to complete!!!
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat >> hello,txt
+^C  
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ 
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat >> hello.txt
+New line.
+lesssgooo.
+^C
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat hello.txt
+Hello world
+This is the sample text file for LAB 2
+Let's hope to complete!!!
+New line.
+lesssgooo.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep '\.$' hello.txt
+New line.
+lesssgooo.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep ' \+' hello.txt
+Hello world
+This is the sample text file for LAB 2
+Let's hope to complete!!!
+New line.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat >> hello.txt
+NOSPACE
+^C
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ 
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep ' \+' hello.txt
+Hello world
+This is the sample text file for LAB 2
+Let's hope to complete!!!
+New line.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ cat hello.txt
+Hello world
+This is the sample text file for LAB 2
+Let's hope to complete!!!
+New line.
+lesssgooo.
+NOSPACE
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ grep '[0-9]' hello.txt > output.txt\
+> 
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ ^C
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB2$ 
+
+

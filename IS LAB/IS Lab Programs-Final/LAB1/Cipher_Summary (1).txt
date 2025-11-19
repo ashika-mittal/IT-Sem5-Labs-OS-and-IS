@@ -1,0 +1,46 @@
+Cipher Algorithms Summary
+
+1. Additive (Caesar) Cipher
+- Description: Shifts each plaintext letter by a fixed key value.
+- Encryption: C = (P + b) mod 26
+- Decryption: P = (C - b) mod 26
+
+2. Multiplicative Cipher
+- Description: Each letter is multiplied by a key 'a' that is coprime with 26.
+- Encryption: C = (a * P) mod 26
+- Decryption: P = (a^(-1) * C) mod 26  [a^(-1) is modular inverse of a mod 26]
+
+3. Affine Cipher
+- Description: Combines multiplicative and additive ciphers.
+- Encryption: C = (a * P + b) mod 26
+- Decryption: P = (a^(-1) * (C - b)) mod 26
+
+4. Brute Force (Caesar / Affine)
+- Description: Try all possible keys until meaningful plaintext is found.
+- Formula: Repeated decryption with all possible keys.
+
+5. Chosen Plaintext Attack
+- Description: Attacker encrypts chosen plaintexts to deduce the key.
+- Formula: Based on known plaintext–ciphertext relation.
+
+6. Hill Cipher
+- Description: A polygraphic substitution cipher using matrix multiplication.
+- Encryption: C = K * P mod 26
+- Decryption: P = K^(-1) * C mod 26
+
+7. Playfair Cipher
+- Description: Digraph substitution cipher using a 5×5 key square.
+- Rules:
+  - Same row → replace with right letter
+  - Same column → replace with below letter
+  - Rectangle → replace with opposite corners
+
+8. Vigenère Cipher
+- Description: Polyalphabetic cipher using repeated keyword.
+- Encryption: Ci = (Pi + Ki) mod 26
+- Decryption: Pi = (Ci - Ki) mod 26
+
+9. Autokey Cipher (Vigenère Variant)
+- Description: Like Vigenère, but the key is extended with plaintext.
+- Encryption: Ci = (Pi + Ki) mod 26
+- Decryption: Pi = (Ci - Ki) mod 26, where key continues with plaintext itself.

@@ -1,0 +1,6 @@
+Hello world
+This is the sample text file for LAB 2
+Let's hope to complete!!!
+New line.
+lesssgooo.
+NOSPACE

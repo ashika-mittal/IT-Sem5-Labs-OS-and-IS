@@ -1,0 +1,92 @@
+
+
+📘 CRYPTOGRAPHY ALGORITHMS - BRIEF NOTES
+
+--------------------------------------------------
+1️⃣ Diffie-Hellman Key Exchange (DH)
+--------------------------------------------------
+🔹 Purpose: Secure key exchange (not encryption by itself).
+🔹 Steps:
+1. Publicly agree on a large prime p and base g.
+2. Alice picks private a, sends A = g^a mod p.
+3. Bob picks private b, sends B = g^b mod p.
+4. Shared key: K = (B^a mod p) = (A^b mod p) = g^(ab) mod p.
+
+Formula:
+K = g^(ab) mod p
+
+--------------------------------------------------
+2️⃣ RSA Algorithm
+--------------------------------------------------
+🔹 Purpose: Public-key encryption, digital signatures.
+🔹 Key Generation:
+- Choose two primes p, q → n = p*q
+- Compute φ(n) = (p-1)(q-1)
+- Choose e (public exponent), gcd(e, φ(n))=1
+- Find d ≡ e^(-1) mod φ(n)
+Public Key = (e, n), Private Key = (d, n)
+
+🔹 Encryption: C = M^e mod n
+🔹 Decryption: M = C^d mod n
+
+--------------------------------------------------
+3️⃣ ECC (Elliptic Curve Cryptography)
+--------------------------------------------------
+🔹 Based on elliptic curve equation:
+y² ≡ x³ + ax + b (mod p)
+
+🔹 Keys:
+- Choose base point G
+- Private key: random integer d
+- Public key: Q = d*G
+
+🔹 Encryption (ElGamal-like over ECC):
+- Ciphertext: (kG, M + kQ)
+- Decryption: M = (M + kQ) - d(kG)
+
+ECC gives same security as RSA but with much smaller keys.
+
+--------------------------------------------------
+4️⃣ ElGamal Cryptosystem
+--------------------------------------------------
+🔹 Based on discrete logarithm problem.
+🔹 Setup:
+- Prime p, generator g
+- Private key: x
+- Public key: y = g^x mod p
+
+🔹 Encryption of message M:
+- Pick random k
+- C1 = g^k mod p
+- C2 = M * y^k mod p
+Ciphertext = (C1, C2)
+
+🔹 Decryption:
+M = C2 * (C1^x)^(-1) mod p
+
+--------------------------------------------------
+5️⃣ Rabin Cryptosystem
+--------------------------------------------------
+🔹 Based on squaring modulo n (hard as factoring).
+🔹 Key Generation:
+- Choose primes p, q (both ≡ 3 mod 4)
+- n = p*q
+Public Key: n
+Private Key: (p, q)
+
+🔹 Encryption:
+C = M² mod n
+
+🔹 Decryption:
+Compute square roots of C mod p and q, then combine with CRT.
+Results in 4 possible plaintexts; redundancy is used to find the correct M.
+
+--------------------------------------------------
+
+✅ SUMMARY:
+- Diffie-Hellman → Key exchange
+- RSA → Widely used encryption/signature (factorization problem)
+- ECC → Efficient alternative to RSA (elliptic curves)
+- ElGamal → Discrete log-based encryption (probabilistic)
+- Rabin → As hard as factoring, but decryption gives 4 candidates
+

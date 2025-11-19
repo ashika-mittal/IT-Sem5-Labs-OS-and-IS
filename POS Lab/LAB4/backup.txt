@@ -1,0 +1,91 @@
+STUDENT@MIT-ICT-L11-06:~$ chmod +x Q3.sh
+chmod: cannot access 'Q3.sh': No such file or directory
+STUDENT@MIT-ICT-L11-06:~$ cd 230911332
+STUDENT@MIT-ICT-L11-06:~/230911332$ cd LAB4
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ chmod +x Q3.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ ,/Q3.sh
+bash: ,/Q3.sh: No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ ./Q3.sh
+./Q3.sh: line 2: syntax error near unexpected token `('
+./Q3.sh: line 2: `	for(i = 0;i<$#;i++)); do'
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ ./Q3.sh "OS Lab" "Quotes" "Cmd" "Sort"
+./Q3.sh: line 2: syntax error near unexpected token `('
+./Q3.sh: line 2: `	for(i = 0;i<$#;i++)); do'
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ ./Q3.sh "OS Lab" "Quotes" "Cmd" "Sort"
+./Q3.sh: line 2: syntax error near unexpected token `('
+./Q3.sh: line 2: `	for(i = 0;i<$#;i++)); do'
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ ./Q3.sh "OS Lab" "Quotes" "Cmd" "Sort"
+Sorted strings:
+Cmd
+OS Lab
+Quotes
+Sort
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ chmod +x Q4.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ ./Q4.sh
+Usage: ./Q4.sh {-linecount|-wordcount|-charcount} filename
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ ./Q4.sh test1.txt
+Usage: ./Q4.sh {-linecount|-wordcount|-charcount} filename
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ ./Q4.sh -wordcount test1.txt
+6
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ ./Q4.sh -charcount test1.txt
+23
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ ./Q4.sh -linecount test1.txt
+1
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ chmod +x Q5.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ ./Q5.sh input.txt error warning fail
+Menu:
+1. Search patterns in file
+2. Delete all occurrences of patterns in file
+3. Exit
+Enter choice: 1
+Lines containing 'error':
+Lines containing 'warning':
+Lines containing 'fail':
+All operations completed without fail.
+Menu:
+1. Search patterns in file
+2. Delete all occurrences of patterns in file
+3. Exit
+Enter choice: 3
+Exiting...
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ ./Q5.sh input.txt Error Warning fail
+Menu:
+1. Search patterns in file
+2. Delete all occurrences of patterns in file
+3. Exit
+Enter choice: 1
+Lines containing 'Error':
+Error: Failed to connect to database.
+Error: Invalid user credentials.
+Lines containing 'Warning':
+Warning: Disk space is low.
+Warning: High memory usage detected.
+Lines containing 'fail':
+All operations completed without fail.
+Menu:
+1. Search patterns in file
+2. Delete all occurrences of patterns in file
+3. Exit
+Enter choice: 2
+Removed occurrences of 'Error'
+Removed occurrences of 'Warning'
+Removed occurrences of 'fail'
+Menu:
+1. Search patterns in file
+2. Delete all occurrences of patterns in file
+3. Exit
+Enter choice: 1
+Lines containing 'Error':
+Lines containing 'Warning':
+Lines containing 'fail':
+Menu:
+1. Search patterns in file
+2. Delete all occurrences of patterns in file
+3. Exit
+Enter choice: 3
+Exiting...
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ gcc Q1.c
+gcc: error: Q1.c: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB4$ cd ..

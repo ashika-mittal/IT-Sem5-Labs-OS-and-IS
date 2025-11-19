@@ -1,0 +1,140 @@
+STUDENT@MIT-ICT-L11-06:~$ #!/bin/bash
+STUDENT@MIT-ICT-L11-06:~$ ^C
+STUDENT@MIT-ICT-L11-06:~$ cd 230p11332
+bash: cd: 230p11332: No such file or directory
+STUDENT@MIT-ICT-L11-06:~$ cd 230911332
+STUDENT@MIT-ICT-L11-06:~/230911332$ cd LAB3
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ chmod +x Q1.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q1.sh
+Enter File Name : 
+test1.txt
+./Q1.sh: line 6: [-d: command not found
+./Q1.sh: line 8: [-f: command not found
+test1.txt does not exist.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ chmod +x Q1.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q1.sh
+Enter File Name : 
+test1.txt
+test1.txt is a regular file.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q1.sh
+Enter File Name : 
+LAB3
+LAB3 does not exist.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q1.sh
+Enter File Name : 
+test2
+test2 is a director.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q1.sh
+Enter File Name : 
+test2 
+test2 is a directory.
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ chmod +x Q2.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q2.sh
+Enter Directory : 
+LAB2
+Enter Pattern : 
+hello
+find: ‘LAB2’: No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q2.sh
+Enter Directory : 
+LAB3
+Enter Pattern : 
+test
+find: ‘LAB3’: No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ chmod +x Q2.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q2.sh
+Enter Pattern : 
+test
+test1.txt
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q2.sh
+Enter Pattern : 
+sh
+Q2.sh
+Q1.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ vi Q3.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ vi Q3.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ chmod +x Q3.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q3.sh
+./Q3.sh: line 1: i: command not found
+./Q3.sh: line 4: newname: command not found
+mv: cannot move './test1.txt' to '': No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ chmod +x Q3.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q3.sh
+./Q3.sh: line 3: newname: command not found
+mv: cannot move './test2.txt' to '': No such file or directory
+./Q3.sh: line 3: newname: command not found
+mv: cannot move './test1.txt' to '': No such file or directory
+./Q3.sh: line 3: newname: command not found
+mv: cannot move './test3.txt' to '': No such file or directory
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ chmod +x Q3.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q3.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q3.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ chmod +x test.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./test.sh
+Enter 2 values
+3 3 
+1
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ chmod +x test.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./test.sh
+Enter 2 values
+3 4
+Check for equality 0
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ chmod +x Q4.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q4.sh
+Enter basic : 
+100000 
+Enter TA :
+1000
+GPL Ghostscript 9.50 (2019-10-15)
+Copyright (C) 2019 Artifex Software, Inc.  All rights reserved.
+This software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:
+see the file COPYING for details.
+Error: /undefinedfilename in (=)
+Operand stack:
+
+Execution stack:
+   %interp_exit   .runexec2   --nostringval--   --nostringval--   --nostringval--   2   %stopped_push   --nostringval--   --nostringval--   --nostringval--   false   1   %stopped_push
+Dictionary stack:
+   --dict:727/1123(ro)(G)--   --dict:0/20(G)--   --dict:75/200(L)--
+Current allocation mode is local
+Last OS error: No such file or directory
+GPL Ghostscript 9.50: Unrecoverable error, exit code 1
+Gross Salary : 
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ chmod +x Q4.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q4.sh
+Enter basic : 
+100000
+Enter TA :
+1000
+Gross Salary : 111000.0
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ chmod +x Q5.sh
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q5.sh
+Enter file extention :
+txt
+Enter target foldef name :
+test2
+./Q5.sh: line 12: [-f: command not found
+./Q5.sh: line 12: [-f: command not found
+./Q5.sh: line 12: [-f: command not found
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q5.sh
+Enter file extention :
+txt
+Enter target foldef name :
+test2
+./Q5.sh: line 12: cptest1.txt: command not found
+./Q5.sh: line 12: cptest2.txt: command not found
+./Q5.sh: line 12: cptest3.txt: command not found
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q5.sh
+Enter file extention :
+txt
+Enter target foldef name :
+test2
+./Q5.sh: line 14: syntax error near unexpected token `fi'
+./Q5.sh: line 14: `	fi'
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ ./Q5.sh
+Enter file extention :
+txt
+Enter target foldef name :
+test2
+STUDENT@MIT-ICT-L11-06:~/230911332/LAB3$ 
+
