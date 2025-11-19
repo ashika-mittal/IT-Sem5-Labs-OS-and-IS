@@ -99,7 +99,7 @@ int main() {
 
     return 0;
 }
-'''
+/*
 student@cl20-06:~/Documents/230911332/LAB9$ ./Q1
 Enter number of memory blocks: 5
 Enter sizes of memory blocks:
@@ -127,3 +127,4 @@ Process 2 (Size 417) allocated to Block 2 (Size 500)
 Process 3 (Size 112) allocated to Block 3 (Size 200)
 Process 4 (Size 426) allocated to Block 5 (Size 600)
 '''
+*/

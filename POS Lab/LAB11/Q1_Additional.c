@@ -114,7 +114,7 @@ int main() {
 
     return 0;
 }
-'''
+/*
 Enter number of requests: 8
 Enter request sequence:
 95
@@ -152,4 +152,4 @@ Total Head Movement: 208
 3. Exit
 Enter your choice: 3
 Exiting...
-'''
+*/

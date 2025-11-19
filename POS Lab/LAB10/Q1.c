@@ -126,7 +126,7 @@ int main() {
     free(pages);
     return 0;
 }
-'''
+/*
 Enter number of pages in reference string: 12
 Enter the reference string:
 7
@@ -172,4 +172,4 @@ Page 3 -> 2 4 3
 Page 0 -> 0 4 3 
 Page 3 -> 0 4 3 
 Total Page Faults (Optimal): 7
-'''
+*/
